@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "795986125000",
+    "project_id": "financy-b9fe3",
+    "storage_bucket": "financy-b9fe3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:795986125000:android:2d274a366ae2c4255805fd",
+        "android_client_info": {
+          "package_name": "com.mass.financy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "795986125000-m8r2f6jp3ghkii5er8gjbae7ack5mu44.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mass.financy",
+            "certificate_hash": "084c49c712e257dfd8a056b09fe69cc656e46d78"
+          }
+        },
+        {
+          "client_id": "795986125000-95spvh3ad82uj768fgprahg22rtvtj2m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHNl7VqhupLYu6vZCCGUAOAysgoTEbEj4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "795986125000-95spvh3ad82uj768fgprahg22rtvtj2m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
