@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context="com.example.financy.SplashScreenActivity">
+    tools:context="com.MASS.financy.SplashScreenActivity">
 
     <ImageView
         android:id="@+id/imageView"

@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:layout_margin="2dp"
-    tools:context="com.example.financy.LoginActivity">
+    tools:context="com.MASS.financy.LoginActivity">
     
     <ImageView
         android:layout_width="200dp"

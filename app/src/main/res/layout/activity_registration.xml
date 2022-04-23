@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context="com.example.financy.RegistrationActivity">
+    tools:context="com.MASS.financy.RegistrationActivity">
 
     <ImageView
         android:layout_width="200dp"
