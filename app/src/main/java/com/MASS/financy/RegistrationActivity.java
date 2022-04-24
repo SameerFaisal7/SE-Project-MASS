@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.content.Intent;
+import android.app.ProgressDialog;
 
 import com.MASS.financy.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -25,7 +26,7 @@ public class RegistrationActivity extends AppCompatActivity {
     private TextView registerQn;
 
     private FirebaseAuth mAuth;
-    //private ProgressDialog progressDialog;
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +39,7 @@ public class RegistrationActivity extends AppCompatActivity {
         registerQn = findViewById(R.id.registerQn);
 
         mAuth = FirebaseAuth.getInstance();
-        //progressDialog = new ProgressDialog(this);
+        progressDialog = new ProgressDialog(this);
 
         registerQn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,19 +61,19 @@ public class RegistrationActivity extends AppCompatActivity {
                 if (TextUtils.isEmpty(passwordString)) {
                     password.setError("Password is required");
                 } else {
-                    //progressDialog.setMessage("registration in progress");
-                    //progressDialog.setCanceledOnTouchOutside(false);
-                    //progressDialog.show();
+                    progressDialog.setMessage("registration in progress");
+                    progressDialog.setCanceledOnTouchOutside(false);
+                    progressDialog.show();
 
                     mAuth.createUserWithEmailAndPassword(emailString,passwordString).addOnCompleteListener(task -> {
                             if (task.isSuccessful()) {
                                 Intent intent = new Intent(RegistrationActivity.this, MainActivity.class);
                                 startActivity(intent);
                                 finish();
-                               //progressDialog.dismiss();
+                               progressDialog.dismiss();
                             }else {
                                 Toast.makeText(RegistrationActivity.this, task.getException().toString(), Toast.LENGTH_SHORT).show();
-                                //progressDialog.dismiss();
+                                progressDialog.dismiss();
                             }
 
                     });

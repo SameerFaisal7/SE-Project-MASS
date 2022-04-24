@@ -9,6 +9,7 @@ import android.widget.QuickContactBadge;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.content.Intent;
+import android.app.ProgressDialog;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,7 +27,7 @@ public class LoginActivity extends AppCompatActivity {
     private TextView loginQn;
 
     private FirebaseAuth mAuth;
-    //private gProgressDialog progressDialog;
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -39,7 +40,7 @@ public class LoginActivity extends AppCompatActivity {
         loginQn = findViewById(R.id.loginQn);
 
         mAuth = FirebaseAuth.getInstance();
-        //progressDialog = new ProgressDialog(this);
+        progressDialog = new ProgressDialog(this);
 
         loginQn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,9 +64,9 @@ public class LoginActivity extends AppCompatActivity {
                 }
 
                 else {
-                    //progressDialog.setMessage("login in progress");
-                    //progressDialog.setCanceledOnTouchOutside(false);
-                    //progressDialog.show();
+                    progressDialog.setMessage("login in progress");
+                    progressDialog.setCanceledOnTouchOutside(false);
+                    progressDialog.show();
 
                     mAuth.signInWithEmailAndPassword(emailString, passwordString).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
@@ -74,10 +75,10 @@ public class LoginActivity extends AppCompatActivity {
                                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                 startActivity(intent);
                                 finish();
-                                //progressDialog.dismiss();
+                                progressDialog.dismiss();
                             }else {
                                 Toast.makeText(LoginActivity.this, task.getException().toString(), Toast.LENGTH_SHORT).show();
-                                //progressDialog.dismiss();
+                                progressDialog.dismiss();
                             }
                         }
                     });
