@@ -40,9 +40,15 @@ public class BudgetActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
 
     private FloatingActionButton fab;
+
     private DatabaseReference budgetRef;
     private FirebaseAuth mAuth;
     private ProgressDialog loader;
+
+    private String post_key = "";
+    private String item = "";
+    private int amount = 0;
+
 
 
     @Override
@@ -207,6 +213,17 @@ public class BudgetActivity extends AppCompatActivity {
                         holder.imageView.setImageResource(R.drawable.ic_other);
                         break;
                 }
+
+                holder.mView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        post_key = getRef(position).getKey();
+                        item = model.getItem();
+                        amount = model.getAmount();
+                        updateData();
+
+                    }
+                });
             }
             @NonNull
             @Override
@@ -222,13 +239,14 @@ public class BudgetActivity extends AppCompatActivity {
     public class MyViewHolder extends RecyclerView.ViewHolder{
         View mView;
         public ImageView imageView;
-        public TextView notes;
+        public TextView notes, date;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             mView = itemView;
             imageView = itemView.findViewById(R.id.imageView);
             notes = itemView.findViewById(R.id.note);
+            date = itemView.findViewById(R.id.date);
         }
         public void setItemName (String itemName){
             TextView item = mView.findViewById(R.id.item);
@@ -240,8 +258,94 @@ public class BudgetActivity extends AppCompatActivity {
         }
         public void setDate (String itemDate){
             TextView date = mView.findViewById(R.id.date);
+            date.setText();
+
 
         }
 
+
     }
+
+    private void updateData(){
+        AlertDialog.Builder myDialog= new AlertDialog.Builder(this);
+        LayoutInflater inflater= LayoutInflater.from(this);
+        View mView = inflater.inflate(R.layout.update_Layout, null);
+
+        myDialog.setView(mView);
+        final AlertDialog dialog = myDialog.create();
+
+        final TextView mItem = mView.findViewById(R.id.itemName);
+        final EditText mAmount = mView.findViewById(R.id.amount);
+        final EditText mNotes = mView.findViewById(R.id.note);
+
+        mNotes.setVisibility(View.GONE);
+
+        mItem.setText(item);
+
+        mAmount.setText(String.valueOf(amount));
+        mAmount.setSelection(String.valueOf(amount).length());
+
+        Button delBut = mView.findViewById(R.id.btnDelete);
+        Button btnUpdate = mView.findViewById(R.id.btnUpdate);
+
+        btnUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view){
+
+                amount = Integer.parseInt(mAmount.getText().toString());
+
+                DateFormat dateFormat = new SimpleDateFormat( "dd-mm-yyyy");
+                Calendar cal = Calendar.getInstance();
+                String date = dateFormat.format(cal.getTime());
+
+                MutableDateTime epoch = new MutableDateTime();
+                epoch.setDate(0);
+                DateTime now = new DateTime();
+                Months months = Months.monthsBetween(epoch, now);
+
+                Data data = new Data(item, date, post_key, null, amount, months.getMonths());
+                budgetRef.child(post_key).setValue(data).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()){
+                            Toast.makeText(BudgetActivity.this, "Updated successfully", Toast.LENGTH_SHORT).show();
+                        }
+                        else{
+                            Toast.makeText(BudgetActivity.this, task.getException().toString(), Toast.LENGTH_SHORT).show();
+                        }
+
+                    }
+                });
+
+                dialog.dismiss();
+
+            }
+        });
+
+        delBut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                budgetRef.child(post_key).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()){
+                            Toast.makeText(BudgetActivity.this, "Deleted successfully", Toast.LENGTH_SHORT).show();
+                        }
+                        else{
+                            Toast.makeText(BudgetActivity.this, task.getException().toString(), Toast.LENGTH_SHORT).show();
+                        }
+
+                    }
+                });
+
+                dialog.dismiss();
+
+            }
+        });
+
+        dialog.show();
+    }
+
 }
+
+
