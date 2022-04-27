@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp"
-    android:background="#0000ff"
+    android:background="#00AABB"
     tools:context=".Activities.RegistrationActivity">
 
     <androidx.cardview.widget.CardView
@@ -33,13 +33,13 @@
 
             <TextView
                 android:id="@+id/title"
-                android:text="Manage your finances!"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Budgeting at your fingertips!"
                 android:textColor="#000"
                 android:textSize="25sp"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/slogan"

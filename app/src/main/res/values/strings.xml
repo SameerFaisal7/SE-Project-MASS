@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Students Budgeting App</string>
+    <string name="app_name">Financy</string>
 
     <string-array name="items">
         <item>select item</item>
