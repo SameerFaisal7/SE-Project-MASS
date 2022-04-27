@@ -1,17 +1,18 @@
 <resources>
-    <string name="app_name">Financy</string>
+    <string name="app_name">Students Budgeting App</string>
 
     <string-array name="items">
-        <item>Select item</item>
+        <item>select item</item>
         <item>Transport</item>
         <item>Food</item>
-        <item>House</item>
+        <item>House Expenses</item>
         <item>Entertainment</item>
         <item>Education</item>
         <item>Charity</item>
-        <item>Apparel</item>
+        <item>Apparel and Services</item>
         <item>Health</item>
-        <item>Personal</item>
+        <item>Personal Expenses</item>
         <item>Other</item>
     </string-array>
+
 </resources>

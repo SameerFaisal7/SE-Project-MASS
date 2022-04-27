@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.MASS.financy">
+    package="com.mass.finansy">
 
     <application
         android:allowBackup="true"
@@ -8,22 +8,28 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Financy">
-        <activity
-            android:name=".BudgetActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="false">
+        android:theme="@style/AppTheme">
+        <activity android:name="com.mass.finansy.Activities.AboutAppActivity"></activity>
+        <activity android:name="com.mass.finansy.Activities.AccountActivity" />
+        <activity android:name="com.mass.finansy.Activities.SetBudgetActivity" />
+        <activity android:name="com.mass.finansy.Activities.ForgotPasswordActivity" />
+        <activity android:name="com.mass.finansy.Activities.MonthlyAnalyticsActivity" />
+        <activity android:name="com.mass.finansy.Activities.WeeklyAnalyticsActivity" />
+        <activity android:name="com.mass.finansy.Activities.DailyAnalyticsActivity" />
+        <activity android:name="com.mass.finansy.Activities.SelectAnalyticsActivity" />
+        <activity android:name="com.mass.finansy.Activities.HistoryActivity" />
+        <activity android:name="com.mass.finansy.Activities.MonthSpendingActivity" />
+        <activity android:name="com.mass.finansy.Activities.WeekSpendingActivity" />
+        <activity android:name="com.mass.finansy.Activities.TodaySpendingActivity" />
+        <activity android:name="com.mass.finansy.Activities.RegistrationActivity" />
+        <activity android:name="com.mass.finansy.Activities.MainActivity" />
+        <activity android:name="com.mass.finansy.Activities.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".RegistrationActivity"
-            android:exported="false" />
     </application>
 
 </manifest>

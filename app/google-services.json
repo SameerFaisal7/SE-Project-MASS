@@ -1,62 +1,42 @@
 {
   "project_info": {
-    "project_number": "669933647009",
-    "project_id": "financy-6bfc2",
-    "storage_bucket": "financy-6bfc2.appspot.com"
+    "project_number": "474706492609",
+    "firebase_url": "https://finansy-7b54f-default-rtdb.firebaseio.com",
+    "project_id": "finansy-7b54f",
+    "storage_bucket": "finansy-7b54f.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:669933647009:android:bf8a8c05c66565d111ece0",
+        "mobilesdk_app_id": "1:474706492609:android:5c673822567f2ee359a840",
         "android_client_info": {
-          "package_name": "com.MASS.financy"
+          "package_name": "com.mass.finansy"
         }
       },
       "oauth_client": [
         {
-          "client_id": "669933647009-334vfdbgvi8tggcr1c1u06pna0ajtnub.apps.googleusercontent.com",
+          "client_id": "474706492609-h15fbl5tl5na9dvdhd2e103a74d36j4r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mass.finansy",
+            "certificate_hash": "084c49c712e257dfd8a056b09fe69cc656e46d78"
+          }
+        },
+        {
+          "client_id": "474706492609-aib1d6d87dg1iaiud92b0jn19ouqh09n.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAA7KLEb_WQvxPIIgCOCtYEmZ02_fu8Np0"
+          "current_key": "AIzaSyBtajUmIxFcdUxqqU-kqWoV5J4lh73bRf0"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "669933647009-334vfdbgvi8tggcr1c1u06pna0ajtnub.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:669933647009:android:edd54ebd65568f5c11ece0",
-        "android_client_info": {
-          "package_name": "com.mass.financy"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "669933647009-334vfdbgvi8tggcr1c1u06pna0ajtnub.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyAA7KLEb_WQvxPIIgCOCtYEmZ02_fu8Np0"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "669933647009-334vfdbgvi8tggcr1c1u06pna0ajtnub.apps.googleusercontent.com",
+              "client_id": "474706492609-aib1d6d87dg1iaiud92b0jn19ouqh09n.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
